@@ -1,5 +1,6 @@
 {
   "name": "hasura-auth",
+  "packageManager": "pnpm@7.18.1",
   "license": "MIT",
   "repository": {
     "url": "git://github.com/nhost/hasura-auth.git",
