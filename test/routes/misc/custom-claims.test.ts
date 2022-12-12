@@ -221,6 +221,19 @@ describe('custom JWT claims', () => {
     );
   });
 
+  it('should add a custom claim from a nested empty array relationship', async () => {
+    await request.post('/change-env').send({
+      AUTH_JWT_CUSTOM_CLAIMS:
+        '{"project-ids":"profile.contributesTo[].project.id"}',
+    });
+
+    const jwt = await insertUserProfile();
+
+    expect(jwt['https://hasura.io/jwt/claims']['x-hasura-project-ids']).toEqual(
+      escapeValueToPg([])
+    );
+  });
+
   it('should add a custom claim from a field of the metadata column', async () => {
     await request.post('/change-env').send({
       AUTH_JWT_CUSTOM_CLAIMS: '{"token":"metadata.token"}',
