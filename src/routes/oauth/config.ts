@@ -161,7 +161,7 @@ export const PROVIDERS_CONFIG: Record<
         emails.find((email) => email.primary) || emails[0];
       return {
         id: profile.id && String(profile.id),
-        displayName: profile.name,
+        displayName: profile.login,
         avatarUrl: profile.avatar_url,
         email,
         emailVerified: verified,
