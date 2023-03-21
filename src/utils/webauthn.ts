@@ -7,7 +7,7 @@ import { RegistrationCredentialJSON } from '@simplewebauthn/typescript-types';
 
 import { ENV } from './env';
 import { gqlSdk } from './gql-sdk';
-import { AuthUserSecurityKeys_Insert_Input } from './__generated__/graphql-request';
+import { AuthUserSecurityKeysInsertInput as AuthUserSecurityKeys_Insert_Input } from './__generated__/graphql-request';
 
 export const getWebAuthnRelyingParty = () =>
   ENV.AUTH_CLIENT_URL && new URL(ENV.AUTH_CLIENT_URL).hostname;

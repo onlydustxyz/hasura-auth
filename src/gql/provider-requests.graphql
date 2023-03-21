@@ -1,9 +1,9 @@
 mutation insertProviderRequest(
-  $providerRequest: authProviderRequests_insert_input!
+  $providerRequest: authProviderRequestsInsertInput!
 ) {
   insertAuthProviderRequest(
     object: $providerRequest
-    on_conflict: {
+    onConflict: {
       constraint: provider_requests_pkey
       update_columns: [options]
     }
