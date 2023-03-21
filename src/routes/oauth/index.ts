@@ -208,7 +208,7 @@ export const oauthProviders = Router()
       logger.warn(`No Oauth response for the provider ${provider}`);
       return sendErrorFromQuery('internal-error');
     }
-    if (!response.profile) {
+    if (!response.profile || response.profile.error) {
       logger.warn(
         `No Oauth profile in the session for the provider ${provider}`
       );
