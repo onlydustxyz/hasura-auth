@@ -149,6 +149,7 @@ export const PROVIDERS_CONFIG: Record<
       client_id: process.env.AUTH_PROVIDER_GITHUB_CLIENT_ID,
       client_secret: process.env.AUTH_PROVIDER_GITHUB_CLIENT_SECRET,
       scope: ['user:email'],
+      dynamic: ['scope'],
     },
     profile: async ({ profile, access_token }) => {
       // * The email is not returned by default, so we need to make a separate request
